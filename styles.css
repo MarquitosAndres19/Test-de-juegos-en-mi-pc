@@ -1,0 +1,217 @@
+/* Estilo general */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+a {
+  color: #00c3ff;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  transition: color 1s ease, transform 0.3s ease, text-shadow 0.4s ease;
+}
+
+a:hover {
+  color: #66ffe0;
+  transform: scale(1.08) translateY(-2px);
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #00ffff;
+  transition: width 0.4s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+
+/* Títulos */
+h1 {
+  color: #00ffcc;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1:hover {
+  color: #66ffe0;
+  transition: color 1s ease, transform 0.3s ease, text-shadow 0.4s ease;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+}
+
+h2 {
+  color: #00c3ff;
+  border-bottom: 2px solid #00c3ff;
+  padding-bottom: 5px;
+  margin-top: 40px;
+}
+
+h2:hover {
+  color: #66ffe0;
+  text-shadow: 0 0 8px rgba(255, 102, 0, 0.6);
+  transition: width 0.4s ease;
+  position: relative;
+}
+
+h4 {
+  color: #66ffe0;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+
+h4:hover {
+ color: #00c3ff;
+ color: #66ffe0;
+ text-shadow: 0 0 8px rgb(10, 165, 255);
+ transition: width 0.4s ease;
+ position: relative;
+}
+
+h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 0;
+  background-color: #0066ff;
+  transition: width 5s ease;
+
+}
+/* Listas */
+ul {
+  list-style-type: square;
+  padding-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  transition: cubic-bezier(0.23, 1, 0.320, 1) 0.3s;
+}
+
+ul ul {
+  list-style-type: circle;
+}
+
+/* Párrafos */
+p {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* Imagen */
+img {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+  text-align: right;
+}
+
+.galeria-gta {
+  display: flex; /* pone las imágenes en fila */
+  gap: 20px; /* separa las imágenes entre sí */
+  justify-content: center; /* centra todo */
+  flex-wrap: wrap; /* permite que se bajen si no hay espacio */
+  margin: 30px 0;
+}
+
+.galeria-gta img {
+  width: 300px; /* mismo ancho para todas */
+  height: auto; /* altura automática para no deformar */
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.galeria-gta img:hover {
+  transform: scale(1.05);
+}
+
+/* Estilo para la vista en grande */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  padding: 20px;
+}
+
+.lightbox:target {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+}
+
+/* Botón de cerrar */
+.lightbox .cerrar {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  color: white;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: color 0.3s ease;
+}
+
+.lightbox .cerrar:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Código extra para que se vea bien en cualquier pantalla */
+@media screen and (max-width: 768px) {
+
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+}
+
+.alerta-construccion {
+  background-color: #ffcc00;
+  color: #1e1e1e;
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+  border: 2px solid #ffa500;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+  margin-bottom: 20px;
+}
